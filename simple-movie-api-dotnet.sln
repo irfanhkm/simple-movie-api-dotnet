@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simple-movie-api-dotnet", "simple-movie-api-dotnet.csproj", "{0109C662-0490-4277-9E74-DB6127CB0446}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0109C662-0490-4277-9E74-DB6127CB0446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0109C662-0490-4277-9E74-DB6127CB0446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0109C662-0490-4277-9E74-DB6127CB0446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0109C662-0490-4277-9E74-DB6127CB0446}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63C05BDC-6E42-44FB-8D9D-113AC9F912E4}
+	EndGlobalSection
+EndGlobal
