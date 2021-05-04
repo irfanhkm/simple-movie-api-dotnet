@@ -7,22 +7,25 @@ namespace simple_movie_api_dotnet.Entities
     [Table("movies")]
     public class MovieEntity
     {
-        [Key]
+        [Key, Column("id")]
         public int Id { get; set; }
 
-        [Key, Column("title")]
-        public string Title;
+        [Column("title")]
+        public string Title { get; set; }
 
-        [Key, Column("premier_on")]
-        public DateTime PremierOn;
+        [Column("premier_on")]
+        public DateTime PremierOn { get; set; }
 
-        [Key, Column("created_at")]
-        public DateTime CreatedAt;
+        [ForeignKey("movie_genre_id"), Column("movie_genre_id")]
+        public int MovieGenreId { get; set; }
 
-        [Key, Column("updated_at")]
-        public DateTime UpdatedAt;
+        public virtual MovieGenreEntity MovieGenre { get; set; }
 
-        [Key, Column("movie_genre_id")]
-        public MovieGenreEntity MovieGenre;
+        [Column("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        [Column("updated_at")]
+        public DateTime UpdatedAt { get; set; }
     }
+
 }

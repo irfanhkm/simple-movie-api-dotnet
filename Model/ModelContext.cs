@@ -11,7 +11,7 @@ namespace simple_movie_api_dotnet.Model
         }
 
         public virtual DbSet<ActorEntity> Actor { get; set; }
-        public virtual DbSet<MovieEntity> Movie { get; set; }
         public virtual DbSet<MovieGenreEntity> MovieGenre { get; set; }
+        public virtual DbSet<MovieEntity> Movie { get; set; }
     }
 }

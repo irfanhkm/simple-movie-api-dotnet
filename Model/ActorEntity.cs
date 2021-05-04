@@ -6,13 +6,13 @@ namespace simple_movie_api_dotnet.Entities
     [Table("actors")]
     public class ActorEntity
     {
-        [Key]
+        [Key, Column("id")]
         public int Id { get; set; }
 
-        [Key, Column("name")]
-        public string Name;
+        [Column("name")]
+        public string Name { get; set; }
 
-        [Key, Column("age")]
-        public int Age;
+        [Column("age")]
+        public int Age { get; set; }
     }
 }
