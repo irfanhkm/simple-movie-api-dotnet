@@ -25,5 +25,24 @@ namespace simple_movie_api_dotnet.Repositories
         {
             return context.MovieGenre.ToList();
         }
+
+        public MovieGenreEntity FindById(int id)
+        {
+            return context.MovieGenre.Where(movieGenre => movieGenre.Id == id).FirstOrDefault();
+        }
+
+        public bool Update(int id, MovieGenreEntity Entity)
+        {
+            var data = FindById(id);
+            if (data == null)
+            {
+                // throw not found response << blum tau caranya
+                return false;
+            }
+
+            data.Name = Entity.Name;
+            context.SaveChanges();
+            return true;
+        }
     }
 }
