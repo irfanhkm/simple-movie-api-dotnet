@@ -2,6 +2,6 @@
 {
     public class MovieGenreDto
     {
-        public string NamaGenre { get; set; }
+        public string Name { get; set; }
     }
 }

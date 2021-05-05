@@ -24,5 +24,6 @@
     <Folder Include="Repositories\" />
     <Folder Include="Dto\" />
     <Folder Include="Factory\" />
+    <Folder Include="Dmo\" />
   </ItemGroup>
 </Project>

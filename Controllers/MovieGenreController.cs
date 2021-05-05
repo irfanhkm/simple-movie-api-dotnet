@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using simple_movie_api_dotnet.Dmo;
 using simple_movie_api_dotnet.Dto;
 using simple_movie_api_dotnet.Factory;
-using simple_movie_api_dotnet.Model;
 using simple_movie_api_dotnet.Repositories;
 
 namespace simple_movie_api_dotnet.Controllers
@@ -19,15 +17,18 @@ namespace simple_movie_api_dotnet.Controllers
         }
 
         [HttpGet("")]
-        public IEnumerable<MovieGenreEntity> GetMovieGenre()
+        public ActionResult<MovieGenreDmo> GetMovieGenre()
         {
-            return _repository.GetAll();
+            var data = _repository.GetAll();
+            return new JsonResult(ResponseDmo.Success(data));
         }
 
         [HttpPost("")]
-        public IActionResult Add([FromBody] MovieGenreDto dto)
+        public ActionResult<MovieGenreDto> Add([FromBody] MovieGenreDto dto)
         {
-            return Ok(_repository.Save(MovieGenreFactory.parsingDto(dto)));
+            var entity = MovieGenreFactory.ParsingDto(dto);
+            _repository.Save(entity);
+            return new JsonResult(ResponseDmo.Success(MovieGenreFactory.ShowMovieGenre(entity), 201));
         }
     }
 }

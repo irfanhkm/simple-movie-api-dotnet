@@ -14,12 +14,14 @@ namespace simple_movie_api_dotnet.Repositories
             context = new ModelContext();
         }
 
-        public object Save(MovieGenreEntity factory)
+        public object Save(MovieGenreEntity entity)
         {
-            return context.MovieGenre.Add(factory);
+            context.MovieGenre.Add(entity);
+            context.SaveChanges();
+            return entity;
         }
 
-        public ICollection<MovieGenreEntity> GetAll()
+        public List<MovieGenreEntity> GetAll()
         {
             return context.MovieGenre.ToList();
         }
