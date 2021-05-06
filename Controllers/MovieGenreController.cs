@@ -53,5 +53,17 @@ namespace simple_movie_api_dotnet.Controllers
             }
             return NotFound();
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            var data = _repository.FindById(id);
+            if (data == null)
+            {
+                return NotFound();
+            }
+            _repository.DeleteById(id);
+            return NoContent();
+        }
     }
 }

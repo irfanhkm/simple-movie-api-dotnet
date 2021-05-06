@@ -44,5 +44,13 @@ namespace simple_movie_api_dotnet.Repositories
             context.SaveChanges();
             return true;
         }
+
+        public bool DeleteById(int id)
+        {
+            var MovieGenreEntity = FindById(id);
+            context.MovieGenre.Remove(MovieGenreEntity);
+            context.SaveChanges();
+            return true;
+        }
     }
 }
